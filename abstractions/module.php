@@ -17,5 +17,7 @@ abstract class Module {
 		if ( $this->view != NULL ) {
 			return $this->view->render();
 		}
+
+		return '';
 	}
 }

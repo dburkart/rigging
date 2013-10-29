@@ -3,8 +3,9 @@
 require_once 'abstractions/dependencyInjector.php';
 
 require_once 'abstractions/layer.php';
-require_once 'abstractions/module.php';
 require_once 'abstractions/view.php';
+require_once 'abstractions/module.php';
+require_once 'abstractions/flow.php';
 
 class Framework extends Module {
 	private $initialModule;
@@ -29,9 +30,17 @@ class Framework extends Module {
 		$this->initialModule = $this->create->module( $module );
 
 		// TODO: Add support for multiple arguments to the init function.
-		$this->initialModule->init();
+		
+		try {
+			$reflect = new ReflectionMethod( $module, 'init' );
+		} catch ( ReflectionException $e ) {
+			trigger_error( "No initialize function defined in Module '$module'", E_USER_ERROR );
+		}
 
-		// Set our view to our initialModule's view
-		$this->view = $this->initialModule->view;
+		$this->initialModule->init();
+	}
+
+	public function render() {
+		return $this->initialModule->render();
 	}
 }
