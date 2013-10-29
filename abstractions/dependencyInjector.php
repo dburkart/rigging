@@ -26,6 +26,7 @@ class DependencyInjector {
 		}
 
 		$layer = new $layerName( $this->base_dir );
+		$reflect = new ReflectionObject( $layer );
 
 		// Make sure it's actually a layer
 		if ( !is_a( $layer, 'Layer' ) ) {
@@ -35,6 +36,11 @@ class DependencyInjector {
 		// TODO: Handle multiple arguments to init()
 
 		$layer->init();
+
+		// Check for a post-init function
+		if ( $reflect->hasMethod( '___POST_INIT' ) ) {
+			$layer->___POST_INIT();
+		}
 
 		return $layer;
 	}
@@ -60,6 +66,7 @@ class DependencyInjector {
 		}
 
 		$module = new $moduleName( $this->base_dir );
+		$reflect = new ReflectionObject( $module );
 
 		// The module we're loading must subclass Module!
 		if ( !is_a( $module, 'Module' ) ) {
@@ -69,6 +76,11 @@ class DependencyInjector {
 		// TODO: Handle multiple arguments to init()
 
 		$module->init();
+
+		// Check for a post-init function
+		if ( $reflect->hasMethod( '___POST_INIT' ) ) {
+			$module->___POST_INIT();
+		}
 
 		return $module;
 	}

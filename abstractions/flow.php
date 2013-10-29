@@ -8,6 +8,10 @@ abstract class Flow extends Module {
 		parent::__construct( $base_dir );
 	}
 
+	public function ___POST_INIT() {
+		$this->route();
+	}
+
 	protected function register( $mixedAction ) {
 		if ( is_array( $mixedAction ) ) {
 			$this->actions = $mixedAction;
