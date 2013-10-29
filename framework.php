@@ -2,6 +2,9 @@
 
 require_once 'abstractions/layer.php';
 require_once 'abstractions/module.php';
+require_once 'abstractions/view.php';
+
+require_once 'abstractions/dependencyInjector.php';
 
 class Framework {
 	private $base_dir;
@@ -26,6 +29,13 @@ class Framework {
 		} else {
 			$this->loadIndex();
 		}
+
+		// TODO: Add support for multiple arguments to the init function.
+		$this->initialModule->init();
+	}
+
+	public function render() {
+		return $this->initialModule->render();
 	}
 
 	private function loadIndex() {
