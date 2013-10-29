@@ -2,8 +2,7 @@
 
 abstract class Module {
 
-	private $base_dir;
-
+	protected $base_dir;
 	protected $view;
 	protected $create;
 

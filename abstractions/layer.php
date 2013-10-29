@@ -2,8 +2,7 @@
 
 abstract class Layer {
 
-	private $base_dir;
-
+	protected $base_dir;
 	protected $create;
 
 	public function __construct( $base_dir ) {

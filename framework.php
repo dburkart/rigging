@@ -1,45 +1,37 @@
 <?php
 
+require_once 'abstractions/dependencyInjector.php';
+
 require_once 'abstractions/layer.php';
 require_once 'abstractions/module.php';
 require_once 'abstractions/view.php';
 
-require_once 'abstractions/dependencyInjector.php';
-
-class Framework {
-	private $base_dir;
+class Framework extends Module {
 	private $initialModule;
 
 	public function __construct( $base_dir ) {
+		parent::__construct( realpath( $base_dir ) );
+		$this->init();
+	}
 
-		$this->base_dir = realpath( $base_dir );
-
+	public function init() {
 		$module = 'index';
 		if ( isset( $_GET['m'] ) &&
 			 file_exists( $this->base_dir . '/modules/' . $_GET['m'] . '.php' ) ) {
-
 			$module = preg_replace( '/\.\.\//', '', $_GET['m'] );
 			require_once $this->base_dir . '/modules/' . $module . '.php';
 
-			if ( class_exists( $module ) ) {
-				$this->initialModule = new $module( $this->base_dir );
-			} else {
-				$this->loadIndex();
+			if ( !class_exists( $module ) ) {
+				$module = 'index';
 			}
-		} else {
-			$this->loadIndex();
 		}
+
+		$this->initialModule = $this->create->module( $module );
 
 		// TODO: Add support for multiple arguments to the init function.
 		$this->initialModule->init();
-	}
 
-	public function render() {
-		return $this->initialModule->render();
-	}
-
-	private function loadIndex() {
-		require_once $this->base_dir . '/modules/index.php';
-		$this->initialModule = new index( $this->base_dir );
+		// Set our view to our initialModule's view
+		$this->view = $this->initialModule->view;
 	}
 }
