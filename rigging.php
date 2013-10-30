@@ -7,7 +7,7 @@ require_once 'abstractions/view.php';
 require_once 'abstractions/module.php';
 require_once 'abstractions/flow.php';
 
-class Framework extends Module {
+class Rigging extends Module {
 	private $initialModule;
 
 	public function __construct( $base_dir ) {
