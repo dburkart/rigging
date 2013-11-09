@@ -1,0 +1,12 @@
+v0.1
+--------
+
+Documentation.
+Named the framework 'Rigging', added LICENSE & README.md
+Adds the ___POST_INIT() hook
+Adds a 'Flow' module.
+Framework should subclass Module.
+Added support for layers in DependencyInjector.
+Stubbed out the DependencyInjector and View classes.
+Modules, Layers, and Views
+Initial commit. Adds scurvy and omapper submodules.
