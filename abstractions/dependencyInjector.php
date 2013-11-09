@@ -91,7 +91,7 @@ class DependencyInjector {
 
 		// If we don't have the requisite class, print another error
 		if ( !class_exists( $moduleName ) ) {
-			trigger_error( "Cannot find class named '$moduleName].", E_USER_ERROR );
+			trigger_error( "Cannot find class named '$moduleName'.", E_USER_ERROR );
 		}
 
 		$module = new $moduleName( $this->base_dir );
