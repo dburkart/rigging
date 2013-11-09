@@ -12,11 +12,24 @@ class DependencyInjector {
 	private $base_dir;
 	private $client;
 
+	/**
+	 * Constructor.
+	 *
+	 * \param $base_dir the base directory this instance of the framework is 
+	 *    operating in
+	 * \param $client a reference to the owner of this DependencyInjector
+	 */
 	public function __construct( $base_dir, $client ) {
 		$this->base_dir = $base_dir;
 		$this->client = $client;
 	}
 
+	/**
+	 * Find and create a layer.
+	 * 
+	 * \param $layerName the name of the layer to create, without extension
+	 * \return Returns the created layer object.
+	 */
 	public function layer( $layerName ) {
 		$layerDir = $this->base_dir . '/layers/';
 		$layerPath = $layerDir . $layerName . '.php';
@@ -53,6 +66,12 @@ class DependencyInjector {
 		return $layer;
 	}
 
+	/**
+	 * Find and create a module. Can only be invoked by other Modules.
+	 *
+	 * \param $moduleName the name of the module, without extension
+	 * \return Returns the created object.
+	 */
 	public function module( $moduleName ) {
 		if ( !is_a( $this->client, 'Module' ) ) {
 			throw new Exception( 'Only modules are allowed to create modules.' );
@@ -93,6 +112,12 @@ class DependencyInjector {
 		return $module;
 	}
 
+	/**
+	 * Find and create the specified View.
+	 *
+	 * \param $viewName the name of the View, with extension.
+	 * \return Returns the created View.
+	 */
 	public function view( $viewName ) {
 		if ( !is_a( $this->client, 'Module' ) ) {
 			throw new Exception( 'Only modules and views are allowed to create views.' );
