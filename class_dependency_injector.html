@@ -97,29 +97,133 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7bf288c1816e8e2e5eddf613e9f40e20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7bf288c1816e8e2e5eddf613e9f40e20"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>__construct</b> ($base_dir, $client)</td></tr>
+<tr class="memitem:a7bf288c1816e8e2e5eddf613e9f40e20"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dependency_injector.html#a7bf288c1816e8e2e5eddf613e9f40e20">__construct</a> ($base_dir, $client)</td></tr>
 <tr class="separator:a7bf288c1816e8e2e5eddf613e9f40e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad03317bc859b1168acfb4fc7fb98d2e3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad03317bc859b1168acfb4fc7fb98d2e3"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>layer</b> ($layerName)</td></tr>
+<tr class="memitem:ad03317bc859b1168acfb4fc7fb98d2e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dependency_injector.html#ad03317bc859b1168acfb4fc7fb98d2e3">layer</a> ($layerName)</td></tr>
 <tr class="separator:ad03317bc859b1168acfb4fc7fb98d2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7299b9d658e68e83b26435c4f60b15ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7299b9d658e68e83b26435c4f60b15ef"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>module</b> ($moduleName)</td></tr>
+<tr class="memitem:a7299b9d658e68e83b26435c4f60b15ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dependency_injector.html#a7299b9d658e68e83b26435c4f60b15ef">module</a> ($moduleName)</td></tr>
 <tr class="separator:a7299b9d658e68e83b26435c4f60b15ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d1c3b24d54e1889fe6a4af28608565c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1d1c3b24d54e1889fe6a4af28608565c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>view</b> ($viewName)</td></tr>
+<tr class="memitem:a1d1c3b24d54e1889fe6a4af28608565c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_dependency_injector.html#a1d1c3b24d54e1889fe6a4af28608565c">view</a> ($viewName)</td></tr>
 <tr class="separator:a1d1c3b24d54e1889fe6a4af28608565c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Finds and manages dependencies. </p>
 <p>The <a class="el" href="class_dependency_injector.html" title="Finds and manages dependencies. ">DependencyInjector</a> class provides a mechanism for loading other modules, layers, and views. In the future, this will allow different 'areas' to be sectioned off, but still be able to share components. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7bf288c1816e8e2e5eddf613e9f40e20"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DependencyInjector::__construct </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$base_dir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$client</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$base_dir</td><td>the base directory this instance of the framework is operating in </td></tr>
+    <tr><td class="paramname">$client</td><td>a reference to the owner of this <a class="el" href="class_dependency_injector.html" title="Finds and manages dependencies. ">DependencyInjector</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad03317bc859b1168acfb4fc7fb98d2e3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DependencyInjector::layer </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$layerName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Find and create a layer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$layerName</td><td>the name of the layer to create, without extension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the created layer object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7299b9d658e68e83b26435c4f60b15ef"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DependencyInjector::module </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$moduleName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Find and create a module. Can only be invoked by other Modules.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$moduleName</td><td>the name of the module, without extension </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the created object. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1d1c3b24d54e1889fe6a4af28608565c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DependencyInjector::view </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$viewName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Find and create the specified <a class="el" href="class_view.html" title="Wraps the Scurvy Templater. ">View</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">$viewName</td><td>the name of the <a class="el" href="class_view.html" title="Wraps the Scurvy Templater. ">View</a>, with extension. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the created <a class="el" href="class_view.html" title="Wraps the Scurvy Templater. ">View</a>. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>abstractions/<a class="el" href="dependency_injector_8php.html">dependencyInjector.php</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 9 2013 01:02:40 for Rigging by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Nov 9 2013 01:22:25 for Rigging by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.5
 </small></address>
