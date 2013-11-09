@@ -6,6 +6,8 @@
  * The DependencyInjector class provides a mechanism for loading other modules,
  * layers, and views. In the future, this will allow different 'areas' to be
  * sectioned off, but still be able to share components.
+ *
+ * \todo Allow init() functions to have arbitrary arguments.
  */
 
 class DependencyInjector {
@@ -54,7 +56,7 @@ class DependencyInjector {
 			trigger_error( "Class '$layerName' must extend Layer.", E_USER_ERROR );
 		}
 
-		// TODO: Handle multiple arguments to init()
+		/// \todo Handle multiple arguments to init()
 
 		$layer->init();
 
@@ -100,7 +102,7 @@ class DependencyInjector {
 			trigger_error( "Class '$moduleName' must extend Module.", E_USER_ERROR );
 		}
 
-		// TODO: Handle multiple arguments to init()
+		/// \todo Handle multiple arguments to init()
 
 		$module->init();
 

@@ -22,6 +22,10 @@ class Rigging extends Module {
 		$this->init();
 	}
 
+	/**
+	 * Rigging initializer. This function routes any module GET requests to the 
+	 * correct Module.
+	 */
 	public function init() {
 		$module = 'index';
 		if ( isset( $_GET['m'] ) &&
@@ -37,6 +41,9 @@ class Rigging extends Module {
 		$this->initialModule = $this->create->module( $module );
 	}
 
+	/**
+	 * Renders the requested module
+	 */
 	public function render() {
 		return $this->initialModule->render();
 	}
