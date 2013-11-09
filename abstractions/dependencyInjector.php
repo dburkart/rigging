@@ -2,6 +2,10 @@
 
 /**
  * \brief Finds and manages dependencies
+ * 
+ * The DependencyInjector class provides a mechanism for loading other modules,
+ * layers, and views. In the future, this will allow different 'areas' to be
+ * sectioned off, but still be able to share components.
  */
 
 class DependencyInjector {
