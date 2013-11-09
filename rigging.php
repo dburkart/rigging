@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * \brief Entry-point for the framework
+ *
+ * The Rigging class is the entry-point for the framework. It extends \a Module, 
+ * and its primary job is to set up and route the framework.
+ */
+
 require_once 'abstractions/dependencyInjector.php';
 
 require_once 'abstractions/layer.php';
@@ -34,3 +41,7 @@ class Rigging extends Module {
 		return $this->initialModule->render();
 	}
 }
+
+/**
+ * \file rigging.php
+ */

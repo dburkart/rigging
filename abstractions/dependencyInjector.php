@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * \brief Finds and manages dependencies
+ */
+
 class DependencyInjector {
 	private $base_dir;
 	private $client;
@@ -99,3 +103,7 @@ class DependencyInjector {
 		}
 	}
 }
+
+/**
+ * \file dependencyInjector.php
+ */

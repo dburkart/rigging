@@ -1,9 +1,16 @@
+\mainpage
+
 ## Rigging ##
 
 Rigging is an exceedingly simple PHP web framework. It is largely MVC inspired,
 with an emphasis on separation of interests. While it deviates somewhat in
-design from a classical MVC framework, all deviations are in the spirit of
+design from a classical MVC framework. All deviations are in the spirit of
 better meeting the needs of a web application.
+
+### Requirements ###
+
+* PHP5
+* Scurvy Template Engine (included as a submodule)
 
 ### Setting the framework ###
 
@@ -29,6 +36,13 @@ contents.
 
 * Dependency Injection
 * Separation of concerns (somewhat enforced)
+
+### Planned Features ###
+
+* Object-Relational mapped layers
+* Configuration management
+* Multi-argument Module initialization
+* Plugins
 
 ### Documentation ###
 
