@@ -46,4 +46,4 @@ contents.
 
 ### Documentation ###
 
-Head to Rigging's gh-pages: https://dburkart.github.io/rigging
+Head to Rigging's gh-pages: http://dburkart.github.io/rigging
