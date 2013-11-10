@@ -32,6 +32,9 @@ php.ini file:
 If this line already exists, make sure you preserve the previous include_path's
 contents.
 
+In the future, Rigging will live on packageist, and will be installable by 
+Composer.
+
 ### Features ###
 
 * Dependency Injection
