@@ -7,6 +7,8 @@
  * and its primary job is to set up and route the framework.
  */
 
+require 'vendor/autoload.php';
+
 require_once 'abstractions/dependencyInjector.php';
 
 require_once 'abstractions/layer.php';

@@ -1,6 +1,3 @@
-[submodule "include/scurvy"]
-	path = include/scurvy
-	url = git@github.com:dburkart/scurvy.git
 [submodule "include/omapper"]
 	path = include/omapper
 	url = git@github.com:dburkart/omapper.git

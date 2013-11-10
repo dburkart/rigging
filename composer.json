@@ -1,0 +1,6 @@
+{
+	"require" : {
+		"php" : ">=5",
+        "dburkart/scurvy" : ">=v1.2"
+    }
+}
