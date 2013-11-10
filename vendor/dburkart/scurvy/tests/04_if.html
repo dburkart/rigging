@@ -1,0 +1,62 @@
+a: {a}, b: {b}, c: {c}, d: {d}
+
+{if a}
+a
+{/if}
+
+{if !c}
+c
+{/if}
+
+{if a = b}
+a = b
+{/if}
+
+{if a != b}
+a != b
+{/if}
+
+{if a = (b + 1)}
+a = (b + 1)
+{/if}
+
+{if a > d}
+a > d
+{/if}
+
+{if d < a}
+d < a
+{/if}
+
+{if a >= d}
+a >= d
+{/if}
+
+{if a <= d}
+a <= d
+{/if}
+
+{if a}
+{include 01_var.html}
+{/if}
+
+{if b}same line{/if}
+
+{if a && b}
+a && b
+{/if}
+
+{if (c && d) || (b && c)}
+(c && d) || (b && c)
+{/if}
+
+{if (c || d) && (b || c)}
+(c || d) && (b || c)
+{/if}
+
+{if a}
+oops!{/if}
+
+{if d / b = 4}
+d / b = 4
+{/if}

@@ -1,0 +1,48 @@
+[
+    {
+        "name": "dburkart/scurvy",
+        "version": "v1.2.1",
+        "version_normalized": "1.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/dburkart/scurvy.git",
+            "reference": "0372c967142f1ee36bcc44ad1e79ec04c4b33840"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/dburkart/scurvy/zipball/0372c967142f1ee36bcc44ad1e79ec04c4b33840",
+            "reference": "0372c967142f1ee36bcc44ad1e79ec04c4b33840",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5"
+        },
+        "time": "2013-11-10 00:14:13",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Scurvy": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Dana Burkart",
+                "email": "dana.burkart@gmail.com",
+                "homepage": "http://danaburkart.com",
+                "role": "developer"
+            }
+        ],
+        "description": "Dead-simple PHP template engine",
+        "homepage": "https://github.com/dburkart/scurvy",
+        "keywords": [
+            "engine",
+            "template",
+            "templating"
+        ]
+    }
+]

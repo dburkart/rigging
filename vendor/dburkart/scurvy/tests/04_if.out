@@ -1,0 +1,32 @@
+a: 2, b: 1, c: , d: 4
+
+a
+
+c
+
+
+a != b
+
+a = (b + 1)
+
+
+
+
+a <= d
+
+Preceding text
+
+Following text
+
+Preceding textFollowing text
+
+
+
+same line
+a && b
+
+
+(c || d) && (b || c)
+
+oops!
+d / b = 4
