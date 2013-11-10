@@ -33,22 +33,23 @@ class DependencyInjector {
 	 * \return Returns the created layer object.
 	 */
 	public function layer( $layerName ) {
+		$className = basename( $layerName );
 		$layerDir = $this->base_dir . '/layers/';
 		$layerPath = $layerDir . $layerName . '.php';
 
 		// Error out if we can't find the layer.
 		if ( !file_exists( $layerPath ) ) {
-			trigger_error( "Cannot locate $layerName.php. (search path: $this->base_dir/layers)", E_USER_ERROR );
+			trigger_error( "Cannot locate $layerPath. (search path: $this->base_dir/layers)", E_USER_ERROR );
 		}
 
 		require_once $layerPath;
 
 		// There's gotta be a class here!
-		if ( !class_exists( $layerName ) ) {
+		if ( !class_exists( $className ) ) {
 			trigger_error( "Could not find a class named '$layerName'.", E_USER_ERROR );
 		}
 
-		$layer = new $layerName( $this->base_dir );
+		$layer = new $className( $this->base_dir );
 		$reflect = new ReflectionObject( $layer );
 
 		// Make sure it's actually a layer
@@ -79,22 +80,24 @@ class DependencyInjector {
 			throw new Exception( 'Only modules are allowed to create modules.' );
 		}
 
+		$className = basename( $moduleName );
+
 		$moduleDir = $this->base_dir . '/modules/';
 		$modulePath = $moduleDir . $moduleName . '.php';
 
 		// If the file doesn't exist, print a helpful error, and return false
 		if ( !file_exists( $modulePath ) ) {
-			trigger_error( "Cannot locate $moduleName.php. (search path: $this->base_dir/modules)", E_USER_ERROR );
+			trigger_error( "Cannot locate $modulePath. (search path: $this->base_dir/modules)", E_USER_ERROR );
 		}
 		
 		require_once $modulePath;
 
 		// If we don't have the requisite class, print another error
-		if ( !class_exists( $moduleName ) ) {
+		if ( !class_exists( $className ) ) {
 			trigger_error( "Cannot find class named '$moduleName'.", E_USER_ERROR );
 		}
 
-		$module = new $moduleName( $this->base_dir );
+		$module = new $className( $this->base_dir );
 		$reflect = new ReflectionObject( $module );
 
 		// The module we're loading must subclass Module!
