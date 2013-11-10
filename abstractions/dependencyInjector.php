@@ -59,6 +59,11 @@ class DependencyInjector {
 
 		/// \todo Handle multiple arguments to init()
 
+		// Check for a pre-init function
+		if ( $reflect->hasMethod( '___PRE_INIT' ) ) {
+			$layer->___PRE_INIT();
+		}
+
 		$layer->init();
 
 		// Check for a post-init function
@@ -106,6 +111,11 @@ class DependencyInjector {
 		}
 
 		/// \todo Handle multiple arguments to init()
+
+		// Check for a pre-init function
+		if ( $reflect->hasMethod( '___PRE_INIT' ) ) {
+			$layer->___PRE_INIT();
+		}
 
 		$module->init();
 
