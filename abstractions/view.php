@@ -26,6 +26,10 @@ class View extends Scurvy {
 					$resolvedValue[] = $assocArray;
 				}
 			}
+		} else {
+			if ( is_a( $val, 'Module' ) ) {
+				$resolvedValue = $val->render();
+			}
 		}
 
 		parent::__call( 'set', array( $var, $resolvedValue ) );

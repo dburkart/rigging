@@ -11,9 +11,17 @@
 
 abstract class Layer {
 
+	/// Base directory for this instance of the framework
 	protected $base_dir;
+
+	/// This Layer's DependencyInjector
 	protected $create;
 
+	/**
+	 * Constructor.
+	 *
+	 * \param $base_dir path to this instance of the Rigging
+	 */
 	public function __construct( $base_dir ) {
 		$this->base_dir = $base_dir;
 		$this->create = new DependencyInjector( $this->base_dir, $this );

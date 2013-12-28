@@ -12,7 +12,7 @@ better meeting the needs of a web application.
 * PHP5
 * Scurvy Template Engine (included as a submodule)
 
-### Setting the framework ###
+### Setting up the framework ###
 
 It is recommended that you keep Rigging separate from any web apps you build
 with it. The cleanest way to do this is by cloning rigging into a separate
